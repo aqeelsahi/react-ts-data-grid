@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
-const Table = (data: string[][]): ReactElement => {
+const Table = (data: string[][]): any => {
   return (
     <div>
       {data.map(row => {
