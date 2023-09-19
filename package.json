@@ -1,6 +1,6 @@
 {
   "name": "react-ts-data-grid",
-  "version": "0.0.1-development",
+  "version": "0.0.2",
   "description": "A template for creating npm packages using TypeScript and VSCode",
   "main": "./lib/index.js",
   "files": [
@@ -64,12 +64,15 @@
     "semantic-release": "^21.0.1",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
-    "typescript": "^4.2.4"
+    "typescript": "^5.1.6"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/@ryansonshine/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "@aqeelsahi:registry": "https://npm.pkg.github.com"
   },
   "lint-staged": {
     "*.ts": "eslint --cache --cache-location .eslintcache --fix"
