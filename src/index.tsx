@@ -1,3 +1,15 @@
+import React from 'react';
+
+export const Table = (data: string[][]): any => {
+  return (
+    <div>
+      {data.map(row => {
+        return <div>{row}</div>;
+      })}
+    </div>
+  );
+};
+
 export const myPackage = (taco = ''): string => taco + 'from my package x';
 
 export const generateCSV = (data: string[][], fileName: string): void => {
