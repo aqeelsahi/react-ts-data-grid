@@ -1,4 +1,5 @@
-// export const myPackage = (taco = ''): string => taco + 'from my package x';
+export const myPackage = (taco = ''): string => taco + 'from my package x';
+
 export const generateCSV = (data: string[][], fileName: string): void => {
   if (data.length === 0) {
     console.error('Data array is empty.');
