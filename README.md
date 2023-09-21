@@ -1,117 +1,71 @@
-# typescript-npm-package-template
+# react-ts-data-grid
 
-> Template to kickstart creating a Node.js module using TypeScript and VSCode
+The `react-ts-data-grid` component is a custom React component designed to render tabular data in a structured and visually appealing manner. It takes a 2D array of strings as a prop, where the first row of the array is treated as the header of the table, and the remaining rows represent the data to be displayed.
 
-Inspired by [node-module-boilerplate](https://github.com/sindresorhus/node-module-boilerplate)
+Here's a breakdown of the key features of the Table component:
 
-## Features
+Dynamic Table Structure: The component dynamically generates the structure of the HTML table based on the provided data. It creates a table header (<thead>) to display column headers and a table body (<tbody>) to render the data rows.
 
-- [Semantic Release](https://github.com/semantic-release/semantic-release)
-- [Issue Templates](https://github.com/ryansonshine/typescript-npm-package-template/tree/main/.github/ISSUE_TEMPLATE)
-- [GitHub Actions](https://github.com/ryansonshine/typescript-npm-package-template/tree/main/.github/workflows)
-- [Codecov](https://about.codecov.io/)
-- [VSCode Launch Configurations](https://github.com/ryansonshine/typescript-npm-package-template/blob/main/.vscode/launch.json)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Husky](https://github.com/typicode/husky)
-- [Lint Staged](https://github.com/okonet/lint-staged)
-- [Commitizen](https://github.com/search?q=commitizen)
-- [Jest](https://jestjs.io/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+Header Row: The first row of the input data is considered the header row, and its content is used to create the column headers (table headings). This allows for flexible and automatic generation of headers without the need for hardcoding.
 
-## Getting started
+Data Rows: All subsequent rows in the input data are treated as data rows and are displayed within the table body. Each cell in these rows represents a data point, ensuring that the entire dataset is presented in a tabular format.
 
-### Set up your repository
+Conditional Rendering: The component handles cases where no data is provided gracefully. If the input data is empty, it displays a user-friendly message indicating that no data is available.
 
-**Click the "Use this template" button.**
+CSS Styling: The Table component can be easily styled using CSS. It applies a custom-table class to the HTML table, allowing developers to define custom styles for the table's appearance, such as borders, background colors, font styles, and more.
 
-Alternatively, create a new directory and then run:
+In summary, the Table component is a versatile and reusable React component that simplifies the rendering of tabular data in web applications. It automatically generates table headers, handles empty data scenarios, and provides flexibility in styling, making it a valuable tool for presenting data in a clean and organized manner within React-based projects.
 
-```bash
-curl -fsSL https://github.com/ryansonshine/typescript-npm-package-template/archive/main.tar.gz | tar -xz --strip-components=1
+## Installation
+
+You can install `react-ts-data-grid` using npm or yarn:
+
+`npm i react-ts-data-grid`
+or
+`yarn add react-ts-data-grid`
+
+## Parameters
+data (Array): An array of string arrays representing the data to be converted into CSV format.
+
+fileName (String): The desired file name for the generated CSV file.
+
+
+## Example
+Here's an example of using react-ts-data-grid to create and trigger a CSV file download:
+```tsx
+import { Table } from "react-ts-data-grid";
+
+const Component: React.FC = () => {
+  const data: string[][] = [
+    ['Name', 'Email'],
+    ['Alice', 'alice@example.com'],
+    ['Bob', 'bob@example.com'],
+  ];
+
+  const downloadCSV = () => generateCSV(data, 'myfile');
+
+  return (
+    <div>
+      <Table data={data}/>  
+    </div>
+  );
+};
+
+export default Component;
 ```
 
-Replace `FULL_NAME`, `GITHUB_USER`, and `REPO_NAME` in the script below with your own details to personalize your new package:
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-```bash
-FULL_NAME="John Smith"
-GITHUB_USER="johnsmith"
-REPO_NAME="my-cool-package"
-sed -i.mybak "s/\([\/\"]\)(ryansonshine)/$GITHUB_USER/g; s/typescript-npm-package-template\|my-package-name/$REPO_NAME/g; s/Ryan Sonshine/$FULL_NAME/g" package.json package-lock.json README.md
-rm *.mybak
-```
+## Contributing
+Contributions are welcome! If you have any bug fixes, improvements, or new features to propose, please open an issue or submit a pull request.
 
-### Add NPM Token
+## Issues
+If you encounter any issues or have questions or suggestions, please feel free to open an issue.
 
-Add your npm token to your GitHub repository secrets as `NPM_TOKEN`.
+## Acknowledgments
+This package was inspired by the need for a simple CSV generation utility.
+Special thanks to the open-source community for their valuable contributions.
 
-### Add Codecov integration
-
-Enable the Codecov GitHub App [here](https://github.com/apps/codecov).
-
-**Remove everything from here and above**
-
----
-
-# my-package-name
-
-[![npm package][npm-img]][npm-url]
-[![Build Status][build-img]][build-url]
-[![Downloads][downloads-img]][downloads-url]
-[![Issues][issues-img]][issues-url]
-[![Code Coverage][codecov-img]][codecov-url]
-[![Commitizen Friendly][commitizen-img]][commitizen-url]
-[![Semantic Release][semantic-release-img]][semantic-release-url]
-
-> My awesome module
-
-## Install
-
-```bash
-npm install my-package-name
-```
-
-## Usage
-
-```ts
-import { myPackage } from 'my-package-name';
-
-myPackage('hello');
-//=> 'hello from my package'
-```
-
-## API
-
-### myPackage(input, options?)
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`
-Default: `rainbows`
-
-Lorem ipsum.
-
-[build-img]:https://github.com/ryansonshine/typescript-npm-package-template/actions/workflows/release.yml/badge.svg
-[build-url]:https://github.com/ryansonshine/typescript-npm-package-template/actions/workflows/release.yml
-[downloads-img]:https://img.shields.io/npm/dt/typescript-npm-package-template
-[downloads-url]:https://www.npmtrends.com/typescript-npm-package-template
-[npm-img]:https://img.shields.io/npm/v/typescript-npm-package-template
-[npm-url]:https://www.npmjs.com/package/typescript-npm-package-template
-[issues-img]:https://img.shields.io/github/issues/ryansonshine/typescript-npm-package-template
-[issues-url]:https://github.com/ryansonshine/typescript-npm-package-template/issues
-[codecov-img]:https://codecov.io/gh/ryansonshine/typescript-npm-package-template/branch/main/graph/badge.svg
-[codecov-url]:https://codecov.io/gh/ryansonshine/typescript-npm-package-template
-[semantic-release-img]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
-[semantic-release-url]:https://github.com/semantic-release/semantic-release
-[commitizen-img]:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
-[commitizen-url]:http://commitizen.github.io/cz-cli/
+Author
+Aqeel Sahi
