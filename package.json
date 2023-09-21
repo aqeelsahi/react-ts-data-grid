@@ -31,15 +31,16 @@
     "node": ">=12.0"
   },
   "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "table",
+    "react",
+    "grid",
+    "data",
+    "UI",
+    "pagination",
+    "search",
+    "export",
+    "library",
+    "npm"
   ],
   "bugs": {
     "url": "https://github.com/aqeelsahi/react-ts-data-grid/issues"
