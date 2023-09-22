@@ -21,13 +21,19 @@ In summary, the Table component is a versatile and reusable React component that
 You can install `react-ts-data-grid` using npm or yarn:
 
 `npm i react-ts-data-grid`
+
 or
+
 `yarn add react-ts-data-grid`
 
 ## Parameters
-data (Array): An array of string arrays representing the data to be converted into CSV format.
+> data (Array): An array containing string arrays that represent the data to be exhibited within the table.
 
-fileName (String): The desired file name for the generated CSV file.
+> exportCSV (boolean): A boolean value used to toggle the visibility of the CSV export link.
+
+> headerStyle (CSSProperties): Example => { backgroundColor: '#e5e6e4' },
+
+> bodyStyle (CSSProperties): Example => { backgroundColor: 'white' },
 
 
 ## Example
@@ -51,7 +57,7 @@ const Component: React.FC = () => {
   ['Jack', 'jack@example.com', '707'],
 ];
 
-  return <Table data={data}/>  
+  return <Table data={data} exportCSV/>  
 };
 
 export default Component;
