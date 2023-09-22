@@ -1,7 +1,49 @@
 import React, { CSSProperties } from 'react';
 import { generateCSV } from 'react-make-csv';
-import './table.css';
 
+const tableStyle = `
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  color: '#847577';
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #847577;
+  text-align: left;
+  padding: 8px;
+}
+
+/* .custom-table th {
+        background-color: #f2f2f2;
+    }
+   
+    .custom-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.3);
+    } 
+ */
+.custom-table tr:hover {
+  background-color: #e5e6e4;
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 8px 0px;
+}
+
+.link {
+  text-decoration: underline;
+  color: #847577;
+  cursor: pointer;
+}
+.link:hover {
+  color: blue;
+}
+
+`;
 const Table = ({
   data,
   exportCSV,
@@ -26,6 +68,7 @@ const Table = ({
 
   return (
     <div>
+      <style>{tableStyle}</style>
       <div className="toolbar">
         {exportCSV && (
           <div className="link" onClick={downloadCSV}>
