@@ -37,7 +37,7 @@ or
 
 
 ## Example
-Here's an example of using react-ts-data-grid to create and trigger a CSV file download:
+Here's an example of using react-ts-data-grid to create a table and attach a button to trigger a CSV file download:
 ```tsx
 import React from "react";
 import { Table } from "react-ts-data-grid";
@@ -75,7 +75,7 @@ Contributions are welcome! If you have any bug fixes, improvements, or new featu
 If you encounter any issues or have questions or suggestions, please feel free to open an issue.
 
 ## Acknowledgments
-This package was inspired by the need for a simple CSV generation utility.
+This package was inspired by the need for a simple table with CSV generation utility.
 Special thanks to the open-source community for their valuable contributions.
 
 > Author
